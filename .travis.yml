@@ -5,10 +5,8 @@ node_js:
   - "7"
 branches:
   only:
-  - 2.0.x
-  - 2.x_public-beta
+  - master
 install:
   - npm install
-  - npm run bootstrap
 script:
   - npm run test
