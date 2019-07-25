@@ -13,8 +13,8 @@
     "test"
   ],
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha -u exports -R spec test/unit/run-test.js",
-    "test:watch": "node_modules/mocha/bin/_mocha test/unit/run-test.js -w",
+    "test": "node_modules/mocha/bin/_mocha test/run-test.js ",
+    "test:watch": "node_modules/mocha/bin/_mocha test/run-test.js -w",
     "test:report": "nyc --cache npm test && nyc report --reporter=html",
     "test:browser": "npm run test:report && open coverage/index.html",
     "functional-test": "node_modules/mocha/bin/_mocha test/functional/**/*-test.js",
@@ -76,17 +76,7 @@
     "functions": 90,
     "branches": 90,
     "include": [
-      "lib/utils/hook-manager.js",
-      "lib/utils/string-utils.js",
-      "lib/utils/url-utils.js",
-      "lib/utils/zip-utils.js",
-      "lib/utils/hash-utils.js",
-      "lib/utils/retry-utility.js",
-      "lib/clients/*",
-      "lib/model/*",
-      "lib/view/*",
-      "lib/controllers/*",
-      "lib/commands/*"
+      "lib/*"
     ]
   },
   "_moduleAliases": {

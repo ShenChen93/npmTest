@@ -1,36 +1,36 @@
-const JSON_PROPERTIES = '_links'
-const R = require('ramda')
+const JSON_PROPERTIES = '_links';
+const R = require('ramda');
 
-var myObj = {
+const myObj = {
     part_one: {
-      name: 'My Name',
-      something: '123',
-      _links: {
-        test: 'test123'
-      }
+        name: 'My Name',
+        something: '123',
+        _links: {
+            test: 'test123'
+        }
     },
     part_two: [
-      {
-        name: 'name',
-        dob: 'dob',
-        _links: {
-          something: 'else',
-          and: 'more'
+        {
+            name: 'name',
+            dob: 'dob',
+            _links: {
+                something: 'else',
+                and: 'more'
+            }
+        },
+        {
+            _links: 'foobar',
+            name: 'name',
+            dob: 'dob'
         }
-      },
-      {
-        _links: 'foobar',
-        name: 'name',
-        dob: 'dob'
-      }
     ],
     _links: {
-      one: 1,
-      two: 2
+        one: 1,
+        two: 2
     }
-  }
+};
 
-  function _cleanResponseBody(reqResponseBody) {
+function _cleanResponseBody(reqResponseBody) {
     if (reqResponseBody) {
         Object.keys(reqResponseBody).forEach((key) => {
             if (JSON_PROPERTIES.includes(key)) {
